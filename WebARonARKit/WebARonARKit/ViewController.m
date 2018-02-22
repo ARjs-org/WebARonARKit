@@ -1,5 +1,6 @@
 /*
  * Copyright 2017 Google Inc. All Rights Reserved.
+ * Modified by Paul Boudreaux
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -398,7 +399,7 @@ const float CAMERA_FRAME_JPEG_COMPRESSION_FACTOR = 0.5;
 
     // Load the default website.
     NSString *defaultSite =
-        @"https://developers.google.com/ar/develop/web/getting-started#examples";
+        @"https://jeromeetienne.github.io/AR.js/aframe/examples/tango-demo.html";
     NSURL *url = [NSURL URLWithString:defaultSite];
     [wkWebView loadRequest:[NSURLRequest requestWithURL:url]];
     [urlTextField setText:url.absoluteString];
