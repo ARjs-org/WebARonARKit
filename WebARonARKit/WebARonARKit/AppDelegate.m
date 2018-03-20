@@ -1,5 +1,6 @@
 /*
  * Copyright 2017 Google Inc. All Rights Reserved.
+ * Modified by Paul Boudreaux; Copyright 2018 Picayune LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,5 +74,31 @@
     [viewController loadURL:urlStringNoScheme];
     return YES;
 }
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray * __nullable restorableObjects))restorationHandler {
+    printf("Continue User Activity called: ");
+    NSLog(@"%@", userActivity.activityType);
+    BOOL result = true;
+    if ([NSUserActivityTypeBrowsingWeb isEqualToString:userActivity.activityType]) {
+        printf("condition entered. ");
+        NSURL * url = userActivity.webpageURL;
+        
+        //printf(url.absoluteString.UTF8String);
+        //handle url and open whatever page you want to open.
+        NSString *urlString = url.absoluteString;
+        NSLog(@"%@", urlString);
+        NSString *urlStringNoScheme = [urlString
+                                       stringByReplacingOccurrencesOfString:[[url scheme] stringByAppendingString:@"://"]
+                                       withString:@""];
+        NSString *removeLoadUrl = [urlStringNoScheme substringFromIndex:22];
+        NSLog(@"%@", urlStringNoScheme);
+        ViewController *viewController = (ViewController *)self.window.rootViewController;
+        // [string substringFromIndex:4]  arjs.picayune.co/loadwww.fark.com
+        [viewController loadURL: removeLoadUrl];
+    }
+    printf("end of user activity ");
+    return result;
+}
+
 
 @end

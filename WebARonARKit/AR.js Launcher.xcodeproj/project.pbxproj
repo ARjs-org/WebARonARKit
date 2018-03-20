@@ -35,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		2119D509203EA07400A0561C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		2183EE54206037FA00C9FA49 /* AR.js Launcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AR.js Launcher.entitlements"; sourceTree = "<group>"; };
 		BD61CF8B1F33FA0A00733763 /* WebARonARKit.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = WebARonARKit.js; sourceTree = "<group>"; };
 		E1C5EBAE1F59C45A00C667C2 /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 		E1C5EBB01F59C47000C667C2 /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		F660385A1EF5FCC100385A4C = {
 			isa = PBXGroup;
 			children = (
+				2183EE54206037FA00C9FA49 /* AR.js Launcher.entitlements */,
 				2119D509203EA07400A0561C /* Settings.bundle */,
 				BD61CF8B1F33FA0A00733763 /* WebARonARKit.js */,
 				F66038651EF5FCC100385A4C /* WebARonARKit */,
@@ -136,11 +138,16 @@
 		F660385B1EF5FCC100385A4C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Ar.js;
 				TargetAttributes = {
 					F66038621EF5FCC100385A4C = {
 						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -234,6 +241,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -287,6 +296,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -319,6 +330,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "AR.js Launcher.entitlements";
 				DEVELOPMENT_TEAM = 7YRSFY6AEY;
 				INFOPLIST_FILE = "$(SRCROOT)/WebARonARKit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -333,6 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "AR.js Launcher.entitlements";
 				DEVELOPMENT_TEAM = 7YRSFY6AEY;
 				INFOPLIST_FILE = "$(SRCROOT)/WebARonARKit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
